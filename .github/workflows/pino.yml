@@ -1,0 +1,13 @@
+name: pino test
+on: [push]
+
+jobs:
+  check-files:
+    runs-on: ubuntu-latest
+    steps:
+      - name: code download
+        uses: actions/checkout@v4
+
+      - name: show files
+        run: ls -r
+
