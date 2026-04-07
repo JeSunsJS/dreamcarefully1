@@ -10,4 +10,10 @@ jobs:
 
       - name: show files
         run: ls -r
+        
+      - name: Leer mensaje.txt
+        run: cat mensaje.txt
+
+      - name: Ejecutar mi script bash
+        run: bash script.sh
 
