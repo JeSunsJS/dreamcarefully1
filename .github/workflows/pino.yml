@@ -20,11 +20,11 @@ jobs:
       - name: Ejecutar mi script bash
         run: bash script.sh
         
-      - name: Generar un saludo automático
+      - name: Generar un resumen real
         uses: actions/github-script@v7
         with:
           script: |
-            core.summary
+            await core.summary
               .addHeading('¡Informe de pino test!')
-              .addText('Hola ${{ github.actor }}, este resumen se ha creado con una Action oficial.')
+              .addRaw('Hola **${{ github.actor }}**, este flujo ha funcionado perfecto.')
               .write()
