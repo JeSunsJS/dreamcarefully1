@@ -20,11 +20,10 @@ jobs:
       - name: Ejecutar mi script bash
         run: bash script.sh
         
-      - name: Saludo para todos
-        run: echo "Este mensaje lo ve cualquiera."
-
-      - name: Saludo exclusivo
-        # Usamos 'if' para decidir si este paso corre o se salta
-        if: github.actor == 'Yoni' # <--- CAMBIA ESTO por tu nombre de usuario
-        run: echo "Hola, Jefe. Solo tú puedes ver este paso ejecutado."
+      - name: Crear un resumen bonito
+        # Este es el "Template" de alguien más
+        uses: test-summary/action@v2
+        if: always() # Queremos que esto pase siempre, incluso si algo falla arriba
+        with:
+          paths: "no_hay_tests_todavia.xml" # No te preocupes por esto ahora
 
