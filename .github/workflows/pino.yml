@@ -28,3 +28,9 @@ jobs:
               .addHeading('¡Informe de pino test!')
               .addRaw('Hola **${{ github.actor }}**, este flujo ha funcionado perfecto.')
               .write()
+      
+      - name: Subir el archivo a GitHub
+        uses: actions/upload-artifact@v4
+        with:
+          name: mi-archivo-descargable # El nombre que tendrá el paquete
+          path: resultado_final.txt
