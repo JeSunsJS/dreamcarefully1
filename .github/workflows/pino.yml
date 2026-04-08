@@ -20,9 +20,11 @@ jobs:
       - name: Ejecutar mi script bash
         run: bash script.sh
         
-      - name: ¿Quién soy y dónde estoy?
-        run: |
-          echo "El usuario que lanzó esto es: ${{ github.actor }}"
-          echo "Estamos en la rama: ${{ github.ref }}"
-          echo "El nombre del repositorio es: ${{ github.repository }}"
+      - name: Saludo para todos
+        run: echo "Este mensaje lo ve cualquiera."
+
+      - name: Saludo exclusivo
+        # Usamos 'if' para decidir si este paso corre o se salta
+        if: github.actor == 'JeSunsJs' # <--- CAMBIA ESTO por tu nombre de usuario
+        run: echo "Hola, Jefe. Solo tú puedes ver este paso ejecutado."
 
