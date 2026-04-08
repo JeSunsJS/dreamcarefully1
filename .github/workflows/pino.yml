@@ -28,6 +28,9 @@ jobs:
               .addHeading('¡Informe de pino test!')
               .addRaw('Hola **${{ github.actor }}**, este flujo ha funcionado perfecto.')
               .write()
+
+      - name: Crear el archivo
+        run: echo "Este es el contenido del artefacto" > resultado_final.txt
       
       - name: Subir el archivo a GitHub
         uses: actions/upload-artifact@v4
