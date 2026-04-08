@@ -19,4 +19,10 @@ jobs:
 
       - name: Ejecutar mi script bash
         run: bash script.sh
+        
+      - name: ¿Quién soy y dónde estoy?
+        run: |
+          echo "El usuario que lanzó esto es: ${{ github.actor }}"
+          echo "Estamos en la rama: ${{ github.ref }}"
+          echo "El nombre del repositorio es: ${{ github.repository }}"
 
