@@ -33,4 +33,5 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: mi-archivo-descargable # El nombre que tendrá el paquete
-          path: resultado_final.txt
+          path: ./resultado_final.txt
+          if-no-files-found: error
